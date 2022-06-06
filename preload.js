@@ -6,11 +6,16 @@ const getRes = () => {
   return new Promise((resolve, reject) => {
     https.get(url, (res) => {
       let resData = '';
-      res.on('data', chunk => {
-        console.log(chunk);
+      res.on('data', chunk => resData += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(resData));
+        } catch (error) {
+          reject(error.message);
+        }
       })
     })
   });
 }
 
-getRes();
+window.getRes = getRes;

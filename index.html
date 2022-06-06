@@ -7,6 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  哈哈哈哈哈
+  快速查询
+  <section id="content"></section>
+  <script>
+    const domContent = document.getElementById('content');
+    window.getRes().then(res => {
+      domContent.innerHTML = res[0].annContent;
+      console.log(res);
+    })
+  </script>
 </body>
 </html>

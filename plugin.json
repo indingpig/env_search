@@ -4,9 +4,9 @@
   "preload": "preload.js",
 	"features": [
 		{
-		  "code": "evn",
-		  "explain": "查找测试环境",
-			"cmds":["evn", "测试"]
+		  "code": "sit",
+		  "explain": "快速查询测试环境",
+			"cmds":["sit", "测试"]
 		}
 	]
 }
